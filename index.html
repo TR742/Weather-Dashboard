@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,26 +8,35 @@
     <link rel="stylesheet" href="./style.css">
     <title>Weather Dashboard</title>
 </head>
+
 <body>
     <!-- Header -->
     <header id="header">
         <h1>Weather Dashboard</h1>
     </header>
 
+
     <!-- Search bar -->
-    <div>
-        <label for="city"></label>
-        <input type="text" placeholder="Search by City" id="city">
+    <div id="nav-bar">
+        <label for="city">Search for a City:</label><br>
+        <input type="text" placeholder="City name" id="city"><br>
         <button type="button" id="search">Search</button>
     </div>
 
     <!-- Weather for selected city API call -->
-    <div>
-        <p id="api-input"></p>
+    <div id="dashboard">
+        <h1 id="name"></h1>
+        <p id="temp"></p>
+        <p id="wind"></p>
+        <p id="hum"></p>
+        <p id="uv-index"></p>
     </div>
+
+
 
     <!-- 5-day Forecast -->
     <div id="five-day-forecast"></div>
     <script src="./script.js"></script>
 </body>
+
 </html>
