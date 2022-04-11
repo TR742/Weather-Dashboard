@@ -1,6 +1,7 @@
 let apiKey = "acf8aa8162d6224707eab34581845c12";
 let userCity = document.getElementById('city');
 let searchBtn = document.getElementById('search');
+let input = document.getElementById('api-input');
 
 searchBtn.addEventListener('click', getApi);
 
@@ -13,9 +14,12 @@ function getApi() {
             return response.json();
         })
         .then(function (data) {
+            console.log(data);
             let lat = data.coord.lat;
+            console.log(lat);
             let lon = data.coord.lon;
-            let cityWeather = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude=alerts&appid=acf8aa8162d6224707eab34581845c12";
+            console.log(lon);
+            let cityWeather = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&units=imperial&exclude=alerts&appid=acf8aa8162d6224707eab34581845c12";
 
             fetch(cityWeather)
                 .then(function (newResponse) {
@@ -24,6 +28,7 @@ function getApi() {
                 })
                 .then(function (newData) {
                     console.log(newData);
+                    input.textContent = newData.current.temp;
                 });
         });
 };

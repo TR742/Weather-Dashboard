@@ -1,3 +1,10 @@
 body {
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
+
+header {
+    text-align: center;
+    background-image: linear-gradient(rgb(18, 14, 221), rgb(164, 223, 250));
+    padding: 5px;
+    color: white;
+}
